@@ -1,0 +1,98 @@
+div{
+  box-sizing: border-box;
+}
+.carousel{
+  padding: 10px;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 3px solid grey;
+  position: relative;
+  overflow: hidden;
+}
+.arrow{
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+.item-container{
+  overflow: hidden;
+  position: relative;
+  border: 1px solid black;
+
+}
+.item{
+  padding: 10px;
+  display: none;
+  animation: 0.5s ease-in-out;
+  position: relative;
+  img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  span{
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+.active,
+.next{
+  display: block;
+}
+.next {
+  position: absolute;
+  top: 0;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .arrow{
+    display: none;
+  }
+
+}
